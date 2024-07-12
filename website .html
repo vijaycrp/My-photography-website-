@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Kumar V - Photographer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel img.inactive {
+            opacity: 0.5;
+        }
+        .content {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #007BFF;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            width: calc(33% - 10px);
+            border-radius: 5px;
+        }
+        .contact {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Vijay Kumar V</h1>
+    <p>Photographer specializing in street, fashion, portrait, and product photography.</p>
+</header>
+
+<div class="carousel">
+    <img src="path/to/your/image1.jpg" class="active" alt="Sample Photo">
+    <img src="path/to/your/image2.jpg" class="inactive" alt="Sample Photo">
+    <img src="path/to/your/image3.jpg" class="inactive" alt="Sample Photo">
+</div>
+
+<div class="content">
+    <div class="section" id="about">
+        <h2>About Me</h2>
+        <p>My name is Vijay Kumar V. I'm a photographer skilled in various genres including street photography, fashion photography, portrait photography, and product photography.</p>
+    </div>
+
+    <div class="section" id="gallery">
+        <h2>Gallery</h2>
+        <h3>Street Photography</h3>
+        <div class="gallery">
+            <img src="path/to/your/street1.jpg" alt="Street Photography">
+            <img src="path/to/your/street2.jpg" alt="Street Photography">
+            <img src="path/to/your/street3.jpg" alt="Street Photography">
+        </div>
+        <h3>Fashion Photography</h3>
+        <div class="gallery">
+            <img src="path/to/your/fashion1.jpg" alt="Fashion Photography">
+            <img src="path/to/your/fashion2.jpg" alt="Fashion Photography">
+            <img src="path/to/your/fashion3.jpg" alt="Fashion Photography">
+        </div>
+        <h3>Portrait Photography</h3>
+        <div class="gallery">
+            <img src="path/to/your/portrait1.jpg" alt="Portrait Photography">
+            <img src="path/to/your/portrait2.jpg" alt="Portrait Photography">
+            <img src="path/to/your/portrait3.jpg" alt="Portrait Photography">
+        </div>
+        <h3>Product Photography</h3>
+        <div class="gallery">
+            <img src="path/to/your/product1.jpg" alt="Product Photography">
+            <img src="path/to/your/product2.jpg" alt="Product Photography">
+            <img src="path/to/your/product3.jpg" alt="Product Photography">
+        </div>
+    </div>
+
+    <div class="section contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>Phone: +123-456-7890</p>
+        <p>Instagram: <a href="https://instagram.com/yourhandle" target="_blank">@yourhandle</a></p>
+    </div>
+</div>
+
+<script>
+    const images = document.querySelectorAll('.carousel img');
+    let current = 0;
+
+    function showNextImage() {
+        images[current].classList.remove('active');
+        images[current].classList.add('inactive');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+        images[current].classList.remove('inactive');
+    }
+
+    setInterval(showNextImage, 3000);
+</script>
+
+</body>
+</html>
